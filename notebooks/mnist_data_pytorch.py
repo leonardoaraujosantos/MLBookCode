@@ -11,14 +11,18 @@ data_train = MNIST("./data/mnist",
                    train=True,
                    transform=transforms.Compose([
                        transforms.Resize((28, 28)),
-                       transforms.ToTensor()]))
+                       transforms.ToTensor(),
+                       #transforms.Normalize((0.1307,), (0.3081,)),
+                   ]))
 
 data_val = MNIST("./data/mnist",
                  train=False,
                  download=True,
                  transform=transforms.Compose([
                      transforms.Resize((28, 28)),
-                     transforms.ToTensor()]))
+                     transforms.ToTensor(),
+                     #transforms.Normalize((0.1307,), (0.3081,)),
+                 ]))
 
 dataloader_train = DataLoader(
     data_train, batch_size=1000, shuffle=True, num_workers=8)
