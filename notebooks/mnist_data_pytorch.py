@@ -6,7 +6,7 @@ from torchvision.datasets.mnist import MNIST
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 
-batch_size = 1000
+batch_size = 100
 
 data_train = MNIST("./data/mnist",
                    download=True,
