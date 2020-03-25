@@ -6,6 +6,8 @@ from torchvision.datasets.mnist import MNIST
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 
+batch_size = 1000
+
 data_train = MNIST("./data/mnist",
                    download=True,
                    train=True,
@@ -25,8 +27,8 @@ data_val = MNIST("./data/mnist",
                  ]))
 
 dataloader_train = DataLoader(
-    data_train, batch_size=1000, shuffle=True, num_workers=8)
-dataloader_val = DataLoader(data_val, batch_size=1000, num_workers=8)
+    data_train, batch_size=batch_size, shuffle=True, num_workers=8)
+dataloader_val = DataLoader(data_val, batch_size=batch_size, num_workers=8)
 
 dataloaders = {
     "train": dataloader_train,
